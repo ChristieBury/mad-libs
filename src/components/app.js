@@ -4,8 +4,17 @@ export default class App extends Component {
   render() {
     return (
       <div className='app'>
-        <h1>Mad Libs</h1>
-        <h2>BIG and small</h2>
+        <div className="backgroundTop">
+          <div className="madLibHeading">
+            <h1>Mad Libs</h1>
+            <div className="madLibTitle">
+              <h2>BIG</h2> and <h3>small</h3>
+              </div>
+                <div className="direction-wrapper">
+                  Fill out the blanks and click the button for the story!
+                </div>
+          </div>
+        </div>
       </div>
     );
   }

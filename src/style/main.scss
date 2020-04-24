@@ -1,28 +1,47 @@
-html {
-    font-size: 62.5%; // 1rem is 10px
-}
 
-*,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    font-family: 'montserrat';
-}
+// $blue:cornflowerblue;
+
 
 body {
-    overflow-x: hidden;
-    font-weight: normal;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    font-family: 'Muli', sans-serif;
+}
+.backgroundTop {
+    border-top: 1em solid darkblue;
+    border-bottom: 1em solid darkblue;
+    width: 100vw;
+    height: 400px;
+    background-color:cornflowerblue;
+    color: white;
+}
+.madLibHeading {
+    text-align: center;
+   
+    h1 {
+        font-size: 2rem;
+        
+        
+    }
 }
 
-.app {
-    margin-top: 2rem;
-    display: grid;
-    justify-items: center;
+.madLibTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: lightgrey;
+}    
+
+h2 {
+    padding-right: 5px;
+
+}
+
+h3 {
+    padding-left: 5px;
+}
+
+
+.direction-wrapper {
+    display: flex;
+    justify-content: center;
 }
