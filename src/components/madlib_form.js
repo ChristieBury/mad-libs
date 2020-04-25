@@ -29,6 +29,7 @@ export default class MadLibForm extends Component {
         super(props);
 
         this.state = {
+            completedForm: false,
             nounOne: '',
             nounTwo: '',
             nounThree:'',
@@ -48,8 +49,15 @@ export default class MadLibForm extends Component {
     console.log(`value for state ${props.inputTitle} is: ${this.state[props.inputTitle]}`)
      }.bind(this); 
     // console.log('trying to handle change');
-
  }
+
+ handleSubmit = function(event) {
+    //  console.log('trying to handle submit');
+    //  console.log(`formCompleted: ${this.state.completedForm}`);
+     this.setState({completedForm: true});
+
+     event.preventDefault();
+ }.bind(this);
     
     render() {
         this.inputData = [
@@ -79,9 +87,13 @@ export default class MadLibForm extends Component {
 
                 <div className='card-wrapper'>
                     <Card >
-                {/* <MadLibInput name='Steve'/>
-                <MadLibInput name='Chantell'/>
-                <MadLibInput name='Cortney'/> */}
+                        <form onSubmit={this.handleSubmit} id='madlib-form'>
+                            <Row>
+                                <Col md="12" className="button-wrapper">
+                                     <input type="submit" className="generate-button" value="Generate Mad Lib"/>
+                                </Col>
+                            </Row>
+                        </form>
                     </Card>
                 </div>
             {/* </Card> */}
