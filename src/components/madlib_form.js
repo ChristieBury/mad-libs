@@ -4,10 +4,29 @@ import {
     Row,
     Card
 } from 'reactstrap';
+import _ from 'lodash';
+
+// function MadLibInput(props) {
+//     return <h1>Hello, {props.name}</h1>;
+//   }
+
+function MadLibInput(props){
+    return (
+        <Col className='first-box'>
+            <Row>
+                <input placeholder={props.placeholder} value={props.state} type="text" onChange={props.onChange}/>
+                <Col md="10">
+                    <div className='input-description'>{props.placeholder}</div>
+                </Col>
+            </Row>
+        </Col>
+
+    )
+}
 
 export default class MadLibForm extends Component {
     constructor(props) {
-        super(props)
+        super(props);
 
         this.state = {
             nounOne: '',
@@ -24,8 +43,8 @@ export default class MadLibForm extends Component {
  handleChange = function(props) {
     return function(event) {
         this.setState({[props.inputTitle]: event.target.value});
-    // console.log(props.inputTitle);
-    // console.log(`value for input ${props.inputTitle} is: ${event.target.value}`);
+    console.log(props.inputTitle);
+    console.log(`value for input ${props.inputTitle} is: ${event.target.value}`);
     console.log(`value for state ${props.inputTitle} is: ${this.state[props.inputTitle]}`)
      }.bind(this); 
     // console.log('trying to handle change');
@@ -33,87 +52,36 @@ export default class MadLibForm extends Component {
  }
     
     render() {
+        this.inputData = [
+            {placeholder:'noun', prop: 'nounOne', state: this.state.nounOne},
+            {placeholder:'noun', prop: 'nounTwo', state: this.state.nounTwo},
+            {placeholder:'adjective', prop: 'adjectiveOne', state: this.state.adjectiveOne},
+            {placeholder:'adjective', prop: 'adjectiveTwo', state: this.state.adjectiveTwo},
+            {placeholder:'verb', prop: 'verb', state: this.state.verb},
+            {placeholder:'noun', prop: 'nounThree', state: this.state.nounThree},
+            {placeholder:'noun', prop: 'nounFour', state: this.state.nounFour},
+            {placeholder:'noun', prop: 'nounFive', state: this.state.nounFive},
+        ]
       return (
           <div className="base-wrapper">
-            {/* <Card> */}
                 <Row className="row-one-wrapper">
-                    <Col className='first-box'>
-                        <Row>
-                        <input placeholder="noun" type="text" onChange={this.handleChange({inputTitle: 'nounOne'})}/>
-                        <Col md="12">
-                        <div className='input-description'>noun</div>
-                        </Col>
-                        </Row>
-                    </Col>
-
-                    <Col className='first-box'>
-                        <Row>
-                        <input placeholder="noun" type="text" onChange={this.handleChange({inputTitle: 'nounTwo'})}/>
-                        <Col md="12">
-                        <div className='input-description'>noun</div>
-                        </Col>
-                        </Row>
-                    </Col>
-
-                    <Col className='first-box'>
-                        <Row>
-                        <input placeholder="adjective" type="text" onChange={this.handleChange({inputTitle: 'adjectiveOne'})}/>
-                        <Col md="12">
-                        <div className='input-description'>adjective</div>
-                        </Col>
-                        </Row>
-                    </Col>
-
-                    <Col className='first-box'>
-                        <Row>
-                        <input placeholder="adjective" type="text" onChange={this.handleChange({inputTitle: 'adjectiveTwo'})}/>
-                        <Col md="12">
-                        <div className='input-description'>adjective</div>
-                        </Col>
-                        </Row>
-                    </Col>
-
-                    <Col className='first-box'>
-                        <Row>
-                        <input placeholder="verb" type="text" onChange={this.handleChange({inputTitle: 'verb'})}/>
-                        <Col md="12">
-                        <div className='input-description'>verb</div>
-                        </Col>
-                        </Row>
-                    </Col>
-
-                    <Col className='first-box'>
-                        <Row>
-                        <input placeholder="noun" type="text" onChange={this.handleChange({inputTitle: 'nounThree'})}/>
-                        <Col md="12">
-                        <div className='input-description'>noun</div>
-                        </Col>
-                        </Row>
-                    </Col>
-
-                    <Col className='first-box'>
-                        <Row>
-                        <input placeholder="noun" type="text" onChange={this.handleChange({inputTitle: 'nounFour'})}/>
-                        <Col md="12">
-                        <div className='input-description'>noun</div>
-                        </Col>
-                        </Row>
-                    </Col>
-
-                    <Col className='first-box'>
-                        <Row>
-                        <input placeholder="noun" type="text" onChange={this.handleChange({inputTitle: 'nounFive'})}/>
-                        <Col md="12">
-                        <div className='input-description'>noun</div>
-                        </Col>
-                        </Row>
-                    </Col>
-
+                  {
+                      _.map(this.inputData, (data, indexKey) => {
+                        //   console.log(`unique key is ${indexKey}`);
+                       return <MadLibInput key={indexKey} 
+                    //    index={indexKey + 1} 
+                    state={data.state}
+                       placeholder={data.placeholder} 
+                       onChange={this.handleChange({inputTitle: data.prop})}/>
+                   })
+                    } 
                 </Row>
 
                 <div className='card-wrapper'>
                     <Card >
-
+                {/* <MadLibInput name='Steve'/>
+                <MadLibInput name='Chantell'/>
+                <MadLibInput name='Cortney'/> */}
                     </Card>
                 </div>
             {/* </Card> */}
