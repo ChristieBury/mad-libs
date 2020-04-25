@@ -1,10 +1,11 @@
-
-// $blue:cornflowerblue;
+@import './madlib_form.scss';
+@import './header.scss';
 
 
 body {
     margin: 0;
     font-family: 'Muli', sans-serif;
+    background-color: rgb(216, 238, 245);
 }
 .backgroundTop {
     border-top: 1em solid darkblue;
@@ -14,39 +15,6 @@ body {
     background-color:cornflowerblue;
     color: white;
 }
-.madLibHeading {
-    text-align: center;
-   
-    h1 {
-        font-size: 2rem;
-        
-        
-    }
-}
-
-.madLibTitle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: lightgrey;
-}    
-
-h2 {
-    padding-right: 5px;
-
-}
-
-h3 {
-    padding-left: 5px;
-}
 
 
-.direction-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-.rowOneWrapper{
-    text-align: center;
-    padding-left: 40px;
-}
+//

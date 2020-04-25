@@ -1,0 +1,38 @@
+.madLibHeading {
+    text-align: center;
+   
+    h1 {
+        font-size: 2rem;
+        
+        
+    }
+}
+
+.madLibTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: lightgrey;
+}    
+
+h2 {
+    padding-right: 5px;
+
+}
+
+h3 {
+    padding-left: 5px;
+}
+
+
+.direction-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.row-one-wrapper{
+    text-align: center;
+    padding-left: 40px;
+    
+}

@@ -1,0 +1,25 @@
+.card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    position: static;
+    padding-top: 50px;
+}
+.card {
+    width: 75vw;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px 0 rgb(16, 94, 172);
+    height: 300px;
+}
+
+input {
+    border-radius: 7px;
+    text-align: center;
+}
+.col-md-12 {
+padding-right: 35px;
+    text-align: center;
+}
+.input-description {
+    color: lightgrey;
+}
