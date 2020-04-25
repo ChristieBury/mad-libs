@@ -5,6 +5,7 @@ import {
     Card
 } from 'reactstrap';
 import _ from 'lodash';
+import MadLibContent from './madlib_content';
 
 // function MadLibInput(props) {
 //     return <h1>Hello, {props.name}</h1>;
@@ -97,9 +98,8 @@ export default class MadLibForm extends Component {
                 <Row className="row-one-wrapper">
                   {
                       _.map(this.inputData, (data, indexKey) => {
-                        //   console.log(`unique key is ${indexKey}`);
                        return <MadLibInput key={indexKey} 
-                    //    index={indexKey + 1} 
+                       
                     state={data.state}
                        placeholder={data.placeholder} 
                        onChange={this.handleChange({inputTitle: data.prop})}/>
@@ -116,9 +116,10 @@ export default class MadLibForm extends Component {
                                 </Col>
                             </Row>
                         </form>
+                        <MadLibContent data={this.state}/>
                     </Card>
                 </div>
-            {/* </Card> */}
+            
         </div>
       )
     }
