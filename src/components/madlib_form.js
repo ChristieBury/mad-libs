@@ -85,7 +85,7 @@ export default class MadLibForm extends Component {
     render() {
         this.inputData = [
             {placeholder:'noun', prop: 'nounOne', state: this.state.nounOne},
-            {placeholder:'noun', prop: 'nounTwo', state: this.state.nounTwo},
+            {placeholder:'noun(plural)', prop: 'nounTwo', state: this.state.nounTwo},
             {placeholder:'adjective', prop: 'adjectiveOne', state: this.state.adjectiveOne},
             {placeholder:'adjective', prop: 'adjectiveTwo', state: this.state.adjectiveTwo},
             {placeholder:'verb', prop: 'verb', state: this.state.verb},

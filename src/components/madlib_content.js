@@ -7,9 +7,16 @@ export default class MadLibContent extends Component {
         return (
             <div className={data.completedForm ?'show-content': 'hide-content'}>
                 <div className="content-wrapper">
-                    A {data.nounOne} is more powerful than {data.nounTwo}, but more expensive, and many of the {data.adjectiveOne} ones are of rather {data.adjectiveTwo} quality. Generally it is better to {data.verb} a pair of {data.nounTwo} than a cheap {data.nounOne} at the same price, if you have the choice. The refractor {data.nounOne} glass {data.nounThree} refract (or bend) the {data.nounFour}. The reflector {data.nounOne} uses a {data.nounFive} for the same purpose. 
+                    A <b>{this.renderLabel(data.nounOne)}</b> is more powerful than a pair of <b>{this.renderLabel(data.nounTwo)}</b>, but more expensive, and many of the <b>{this.renderLabel(data.adjectiveOne)}</b> ones are of rather of <b>{this.renderLabel(data.adjectiveTwo)}</b> quality. Generally it is better to <b>{this.renderLabel(data.verb)}</b> on a pair of <b>{this.renderLabel(data.nounTwo)}</b> than a cheap <b>{this.renderLabel(data.nounOne)}</b> at the same price, if you have the choice. The <b>{this.renderLabel(data.nounOne)}'s</b> <b>{this.renderLabel(data.nounThree)}</b> can bend the <b>{this.renderLabel(data.nounFour)}</b>. The better <b>{this.renderLabel(data.nounOne)}</b> uses a <b>{this.renderLabel(data.nounFive)}</b> for the same purpose. 
                 </div>
             </div>
         );
     }
+    renderLabel = function(state) {
+        return(
+            <span>
+                <label className="black-label"></label><b className="bold-text">{state}</b>
+            </span>
+        );
+    };
 }

@@ -9,7 +9,7 @@ export default class App extends Component {
           <div className="madLibHeading">
             <h1>Mad Libs</h1>
             <div className="madLibTitle">
-              <h2>BIG</h2> and <h3>small</h3>
+              <h3>Which is better?</h3>
               </div>
                 <div className="direction-wrapper">
                   Fill out the blanks and click the button for the story!
